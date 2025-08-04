@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini E-Commerce Site</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .products, .cart {
+      flex: 1;
+      min-width: 300px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+    .product h3 {
+      margin-top: 0;
+    }
+    button {
+      padding: 0.4rem 0.8rem;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .btn-small {
+      padding: 0.2rem 0.6rem;
+      font-size: 0.9rem;
+    }
+    .remove-btn {
+      background: #dc3545;
+      margin-left: 8px;
+    }
+    .remove-btn:hover {
+      background: #c82333;
+    }
+    .clear-btn {
+      background: #ffc107;
+      color: #000;
+      margin-top: 1rem;
+      width: 100%;
+    }
+    .clear-btn:hover {
+      background: #e0a800;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .cart-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .cart-total {
+      font-weight: bold;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🛒 My E-Commerce Store
+  </header>
+  <div class="container">
+    <div class="products">
+      <h2>Products</h2>
+      <div class="product">
+        <h3>Wireless Mouse</h3>
+        <p>Price: ₹499</p>
+        <button onclick="addToCart('Wireless Mouse', 499)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Keyboard</h3>
+        <p>Price: ₹799</p>
+        <button onclick="addToCart('Keyboard', 799)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Headphones</h3>
+        <p>Price: ₹1199</p>
+        <button onclick="addToCart('Headphones', 1199)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="cart">
+      <h2>Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total">Total: ₹<span id="total">0</span></div>
+      <button class="clear-btn" onclick="clearCart()">Empty Cart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
